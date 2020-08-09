@@ -8,6 +8,8 @@ import com.edu.microservice.limitsservice.bean.LimitConfiguration;
 import com.edu.microservice.limitsservice.config.Configuration;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
+
+//Controller method.
 @RestController
 public class LimitsConfigController {
 
