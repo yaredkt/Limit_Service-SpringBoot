@@ -12,7 +12,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 //Controller method.
 @RestController
 public class LimitsConfigController {
-
+//atuowired by name
 	@Autowired
 	private Configuration configuration;
 	
