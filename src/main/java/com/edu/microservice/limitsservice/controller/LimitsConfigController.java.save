@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.edu.microservice.limitsservice.bean.LimitConfiguration;
 import com.edu.microservice.limitsservice.config.Configuration;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-//created by yaried
+
 
 //Controller method.
 @RestController
 public class LimitsConfigController {
-//atuowired by name
+//Autowired by Name
+
 	@Autowired
 	private Configuration configuration;
 	
@@ -21,16 +22,32 @@ public class LimitsConfigController {
 		
 		return new LimitConfiguration(configuration.getMaximum(), configuration.getMinimum());
 	}
-	//@RequestMapping("/")
+	
 	@GetMapping(path = "/foult-tolerance/limits")
 	@HystrixCommand(fallbackMethod= "fallbackMethod")
 	public LimitConfiguration retrieveFaoultConfiglimits() {
 		
-		throw new RuntimeException("this is fault toulerance by Hystrix");
+		throw new RuntimeException("this is fault toulerance");
 	}
-     // this is a Fault toulerance by Hystrix. 	
+	
      public LimitConfiguration fallbackMethod() {
 		
 		return new LimitConfiguration(9999, 9);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
